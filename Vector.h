@@ -14,7 +14,8 @@ public:
     ~Vector();
 
     void                PrintVectorToShell();
-    void                Generate(double min, double max);
+    void                Generate(float min, float max);
+    void                GenWithFixedVal(int len, float *vals);
 
     Vector              operator - (const Vector& v);
     Vector&             SubtractionI(Vector& v);
@@ -26,6 +27,7 @@ public:
     Vector&             MultiplyByValI(float value);
 
     int                 GetLen() const              { return _iR;       }
+    float*              GetPtr() const              { return _pv;       }
     float               operator [] (int i) const   { return _pv[i];    }
     float&              operator [] (int i)         { return _pv[i];    }
 
