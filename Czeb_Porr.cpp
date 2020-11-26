@@ -4,6 +4,7 @@
 #include <iostream>
 #include <random>
 #include <chrono>
+#include <iomanip>
 #include "Matrix.h"
 
 
@@ -53,41 +54,57 @@ Vector CzebAlg(Matrix &A, Vector &x0, Vector &b, int iters, int s)
 
 int main()
 {
-    int     rows = 3; int cols = rows;
-    // Init all necessary vectors and matrix A
-    Matrix  A = Matrix(rows, cols);
-    float   fMaxDiagVal = A.Generate(-50, 50);
-    Vector  vXZero = Vector(rows);
-    Vector  b = Vector(rows);
+	int n = 2;									// rozmiar macierzy
+	int i = 0, j = 0, k = 0;					// zmienne pomocnicze
+	float alfa;
+	cout.precision(4);							// ustalenie precyzji
+	cout.setf(ios::fixed);
+	//float a[3][3] = { {1,  1, -1},
+	//				  {1, -1,  2},
+	//				  {2,  1,  1} };
+	//float b[3] = { 7,3,9 };
+	float x[3] = {};
+	float a[3][3] = {	{6,   2, -1},
+						{3,   9,  1},
+						{2,  -2,  3} };
+	float b[3] = { 5,9,-1 };
 
-    b.Generate(-10.0, 10.0);
-    // calculate s_prmCzbsz - step 0
-    s_prmCzbsz.fBeta        = 2 * fMaxDiagVal;
-    s_prmCzbsz.fOmegaZero   = (s_prmCzbsz.fBeta - s_prmCzbsz.fAlpha) / (s_prmCzbsz.fBeta + s_prmCzbsz.fAlpha);
-    s_prmCzbsz.fC           = 2 / (s_prmCzbsz.fBeta + s_prmCzbsz.fAlpha);
-    if( fabs(s_prmCzbsz.fBeta - s_prmCzbsz.fAlpha) > 0.00001f )
-    {
-        s_prmCzbsz.fL = 2 * (s_prmCzbsz.fBeta + s_prmCzbsz.fAlpha) / (s_prmCzbsz.fBeta - s_prmCzbsz.fAlpha);
-    }
-    else {
-        s_prmCzbsz.fL = FLT_MAX;
-        printf ("L value is +inf!!!");
-    }
-    // end of step 0
+	for (i = 0; i <= n; i++)					//print the new matrix
+	{
+		for (j = 0; j <= n; j++)
+			cout << a[i][j] << setw(16);
+		cout << "\n";
+	}
+	for (k = 0; k <= n; k++) {					// petla wierszy eliminujacych
+												// (kolumn eliminowanych)
+		#pragma omp parallel for private(alfa,j)
+		for (i = 0; i <= n; i++) {				// petla modyfikacji wierszy
+												// ponizej i powyzej
+			if (i == k) continue;
+			alfa = a[i][k] / a[k][k];
+			for (j = k; j <= n; j++)			// petla kolumn w danym wierszu
+				a[i][j] = a[i][j] - alfa * a[k][j];
+			b[i] = b[i] - alfa * b[k];
+		}
+	}
 
-    //TEST
-    /*
-    A.PrintMatrixToShell();
-    printf("Maximum diagonal value: %.6f\n", fMaxDiagVal);
-    printf("Vector b:\n");
-    b.PrintVectorToShell();
-    printf("Vector x:\n");
-    vXPrev.PrintVectorToShell();
-    */
-    // END TEST
+	cout << "\n";
+	for (i = 0; i <= n; i++)					// macierz po eliminacji Gaussa - Jordana
+	{
+		for (j = 0; j <= n; j++)
+			cout << a[i][j] << setw(16);
+		cout << "\n";
+	}
+
+	for (k = 0; k <= n; k++) 
+		x[k] = b[k] / a[k][k];
 
 
-    
-    
+	cout << "\nThe values of result vector are:\n";
+	for (i = 0; i <= n; i++)
+		cout << "x[" << i << "] = " << x[i] << endl;				// Wypisz rozwiazanie  
+
+
+	return 0;
     
 }
