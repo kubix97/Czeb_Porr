@@ -4,6 +4,7 @@
 #include <iostream>
 #include <random>
 #include <chrono>
+#include <fstream>
 #include "Matrix.h"
 
 
@@ -23,15 +24,15 @@ struct CZBPRM {
 static CZBPRM s_prmCzbsz;
 
 
-Vector CzebAlg(Matrix &A, Vector &x0, Vector &b, int iters, int s)
+Vector CzebAlg(Matrix &A, Vector &x0, Vector &b, int maxIters, int s, float accuracy)
 {
     Vector  vXPrev = Vector(x0.GetLen());
     int     k = 0;
     Vector  vX = Vector(x0.GetLen()); // current x start filled with zeros
     Vector  vTemp, vTm;
     float   fCff;
-
-    for( int i = 0; i < iters; i++ )
+    auto start = chrono::high_resolution_clock::now();
+    for( int i = 0; i < maxIters; i++ )
     {
         if( k >= s || i == 0 )
         {
@@ -47,11 +48,43 @@ Vector CzebAlg(Matrix &A, Vector &x0, Vector &b, int iters, int s)
         vTemp= vTemp - vTm; 
 
         vXPrev = vX; vX = vTemp; s_prmCzbsz.fOmegaPrev = s_prmCzbsz.fOmega; s_prmCzbsz.fOmega = 1 / (s_prmCzbsz.fL - s_prmCzbsz.fOmega);
-        if( i % 500 == 0 && i != 0 ) {
-            printf("Iteracja %d\n", i);
+        if( vX.CalcDistance(vXPrev) < accuracy ) {
+            printf("Cheb iteration stops after %d iterations\n", i);
+            maxIters = i; // save num of iterations to calcuate execution time per iteration
+            break;
         }
+            
     }
+    auto end = chrono::high_resolution_clock::now();
+    double duration = (double) chrono::duration_cast<chrono::nanoseconds>(end - start).count();
+    duration *= 1e-9;
+    printf("Execution time = %.9f sec = %.9f ms\nAverage time per iteration = %f.9 ms\n", duration, duration*1e3, duration*1e3/maxIters);
     return vX;
+}
+
+void PrintEquationToFile(Matrix& A, Vector& b)
+{
+    ofstream file;
+    int iR = A.GetNumOfRows(), iC = A.GetNumOfCals();
+    file.open("Dane.txt");
+    if( file.is_open() )
+    {
+        file << iR << "\t" << iC << "\n";
+        for( int i = 0; i < iR; i++ )
+        {
+            for( int j = 0; j < iC; j++ ) {
+                file << A[i][j] << "\t";
+            }
+            file << "\n";
+        }
+        for( int i = 0; i < iR; i++ ) {
+            file << b[i] << "\t";
+        }
+        file.close();
+    }
+    else { 
+        printf("Unable to wtrite to file");
+    }
 }
 
 int main()
@@ -82,14 +115,13 @@ int main()
     //float tabB[4] = {2.0f, 2.0f, 2.0f, 2.0f};
     float tabB[5] = {-5.0f, 51.0f, 17.0f, -165.0f, 168.0f};
     //float tabC[5] = {1.0f, 2.0f, 3.0f, 4.0f, 5.0f};
-    //printf("Maximum diagonal value: %.6f\n", fMaxDiagVal);
     Vector btst = Vector(rows);
-    //Vector vSub = Vector(rows);
     btst.GenWithFixedVal(rows, tabB);
     printf("Vector bTest:\n");
     btst.PrintVectorToShell();
+    PrintEquationToFile(Atst, btst);
     float fMaxDiagVal = Atst.GetMaxDiagVal();
-    printf("Max diagonal value: %f", fMaxDiagVal);
+    printf("Max diagonal value: %f\n", fMaxDiagVal);
 
    /* vSub.GenWithFixedVal(rows, tabC);   
     printf("Vector vSub:\n");
@@ -117,7 +149,7 @@ int main()
         s_prmCzbsz.fL = FLT_MAX;
         printf ("L value is +inf!!!");
     }
-    Vector Xtst = CzebAlg( Atst, vXZero, btst, 1000, 30000);
+    Vector Xtst = CzebAlg( Atst, vXZero, btst, 1000, 30000, 1e-8f);
     printf("Vector Xres:\n");
     Xtst.PrintVectorToShell(); // X result should be [-1;2;1;-2;1]
     // END TEST

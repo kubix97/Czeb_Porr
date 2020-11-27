@@ -2,6 +2,7 @@
 #include <random>
 #include <chrono>
 #include <xmmintrin.h>
+#include <pmmintrin.h >
 #include "Vector.h"
 #include "common.h"
 
@@ -365,6 +366,67 @@ Vector& Vector::MultiplyByValI(float value)
         }
     }
     return *this;
+}
+#endif
+
+#if EXMODE == 0
+/// <summary>
+/// Calculate euclidean distance beetween 2 vectors
+/// </summary>
+/// <param name="v - second vector"></param>
+/// <returns>distance</returns>
+float Vector::CalcDistance(Vector& v)
+{
+    float fDist = 0.0f;
+    Vector vTemp = *this - v;
+    for( int i = 0; i < _iR; i++) {
+        fDist += vTemp[i] * vTemp[i];
+    }
+    fDist = sqrt(fDist);
+    return fDist;
+}
+#endif
+
+#if EXMODE == 1
+/// <summary>
+/// Calculate euclidean distance beetween 2 vectors
+/// </summary>
+/// <param name="v - second vector"></param>
+/// <returns>distance</returns>
+float Vector::CalcDistance(Vector& v)
+{
+    float fDist = 0.0f;
+    Vector vTemp = Vector(v.GetLen());
+    if( _iR < 4 ) {
+        for( int i = 0; i < _iR; i++ ) 
+        {
+            vTemp[i] = _pv[i] - v[i];
+            fDist += vTemp[i] * vTemp[i];
+        }
+    }
+    else
+    {
+        float* p1 = _pv, * p2 = v._pv, * pt = vTemp._pv;
+        int   i, iR = _iR - _iR % 4;
+       
+        __m128 xr = _mm_setzero_ps();
+        for( i = 0; i < iR; i += 4 ) {
+            __m128 x0 = _mm_load_ps(p1 + i);
+            __m128 x1 = _mm_load_ps(p2 + i);
+            x0 = _mm_sub_ps(x0, x1); // substraction
+            x0 = _mm_mul_ps(x0, x0); // (diifference)^2
+            xr = _mm_add_ps(xr, x0);
+        }
+        xr = _mm_hadd_ps(xr, xr);
+        xr = _mm_hadd_ps(xr, xr);
+        _mm_store_ss(&fDist, xr);
+        for( ; i < _iR; i++ ) {
+            vTemp[i] = _pv[i] - v[i];
+            fDist += vTemp[i] * vTemp[i];
+        }
+    }
+    fDist = sqrt(fDist);
+    return fDist;
 }
 #endif
 

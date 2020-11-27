@@ -26,6 +26,8 @@ public:
     Vector              MultiplyByVal(float value);
     Vector&             MultiplyByValI(float value);
 
+    float               CalcDistance(Vector& v);
+
     int                 GetLen() const              { return _iR;       }
     float*              GetPtr() const              { return _pv;       }
     float               operator [] (int i) const   { return _pv[i];    }
