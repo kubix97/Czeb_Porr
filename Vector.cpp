@@ -33,6 +33,7 @@ Vector::~Vector()
 // Print vector to command line
 void Vector::PrintVectorToShell()
 {
+	printf("Vector:\n");
     for( int i = 0; i < _iR - 1; i++ ) {
         printf("%.6f\t", _pv[i]);
     }
