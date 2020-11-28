@@ -128,6 +128,23 @@ Vector Vector::operator - (const Vector& v)
 }
 #endif
 
+#if EXMODE == 2
+/// <summary>
+/// Subtract vector v from Vector
+/// </summary>
+/// <param name="v - subtracted vector"></param>
+/// <returns> res - new result vector </returns>
+Vector Vector::operator - (const Vector& v)
+{
+    Vector res = Vector(v.GetLen());
+    # pragma omp parallel for schedule(static)
+    for( int i = 0; i < v.GetLen(); i++ ) {
+        res[i] = _pv[i] - v[i];
+    }
+    return res;
+}
+#endif
+
 #if EXMODE == 0
 /// <summary>
 /// Subtract vector v from Vector
@@ -174,6 +191,21 @@ Vector& Vector::SubtractionI(Vector& v)
 }
 #endif
 
+#if EXMODE == 2
+/// <summary>
+/// Subtract vector v from Vector
+/// </summary>
+/// <param name="v - subtracted vector"></param>
+/// <returns> *this - result in current vector </returns>
+Vector& Vector::SubtractionI(Vector& v)
+{
+    # pragma omp parallel for schedule(static)
+    for( int i = 0; i < v.GetLen(); i++ ) {
+        _pv[i] -= v[i];
+    }
+    return *this;
+}
+#endif
 
 # if EXMODE == 0
 /// <summary>
@@ -225,6 +257,23 @@ Vector Vector::Add(Vector& v)
 }
 #endif
 
+# if EXMODE == 2
+/// <summary>
+/// Add vector v
+/// </summary>
+/// <param name="v - vector to be add"></param>
+/// <returns> res - result in new vector </returns>
+Vector Vector::Add(Vector& v)
+{
+    Vector res = Vector(v.GetLen());
+    # pragma omp parallel for schedule(static)
+    for( int i = 0; i < v.GetLen(); i++ ) {
+        res[i] = _pv[i] + v[i];
+    }
+    return res;
+}
+#endif
+
 #if EXMODE == 0
 /// <summary>
 /// Add vector v
@@ -233,8 +282,7 @@ Vector Vector::Add(Vector& v)
 /// <returns> *this - result in current vector </returns>
 Vector& Vector::AddI(Vector& v)
 {
-    for( int i = 0; i < v.GetLen(); i++ )
-    {
+    for( int i = 0; i < v.GetLen(); i++ ) {
         _pv[i] += v[i];
     }
     return *this;
@@ -267,6 +315,22 @@ Vector& Vector::AddI(Vector& v)
         for( ; i < _iR; i++ ) {
             _pv[i] += v[i];
         }
+    }
+    return *this;
+}
+#endif
+
+#if EXMODE == 2
+/// <summary>
+/// Add vector v
+/// </summary>
+/// <param name="v - vector to be add"></param>
+/// <returns> *this - result in current vector </returns>
+Vector& Vector::AddI(Vector& v)
+{
+    # pragma omp parallel for schedule(static)
+    for( int i = 0; i < v.GetLen(); i++ ) {
+        _pv[i] += v[i];
     }
     return *this;
 }
@@ -322,6 +386,23 @@ Vector Vector::MultiplyByVal(float value)
 }
 #endif
 
+#if EXMODE == 2
+/// <summary>
+/// Multiply vector by float value
+/// </summary>
+/// <param name="value - multiplicator"></param>
+/// <returns> res - result in new vector </returns>
+Vector Vector::MultiplyByVal(float value)
+{
+    Vector res = Vector(_iR);
+    # pragma omp parallel for schedule(static)
+    for( int i = 0; i < _iR; i++ ) {
+        res[i] = _pv[i] * value;
+    }
+    return res;
+}
+#endif
+
 #if EXMODE == 0
 /// <summary>
 /// Multiply vector by float value
@@ -364,6 +445,22 @@ Vector& Vector::MultiplyByValI(float value)
         for( ; i < _iR; i++ ) {
             _pv[i] *= value;
         }
+    }
+    return *this;
+}
+#endif
+
+#if EXMODE == 2
+/// <summary>
+/// Multiply vector by float value
+/// </summary>
+/// <param name="value - multiplicator"></param>
+/// <returns> *this - result in current vector </returns>
+Vector& Vector::MultiplyByValI(float value)
+{
+    # pragma omp parallel for schedule(static)
+    for( int i = 0; i < _iR; i++ ) {
+        _pv[i] *= value;
     }
     return *this;
 }
@@ -424,6 +521,25 @@ float Vector::CalcDistance(Vector& v)
             vTemp[i] = _pv[i] - v[i];
             fDist += vTemp[i] * vTemp[i];
         }
+    }
+    fDist = sqrt(fDist);
+    return fDist;
+}
+#endif
+
+#if EXMODE == 2
+/// <summary>
+/// Calculate euclidean distance beetween 2 vectors
+/// </summary>
+/// <param name="v - second vector"></param>
+/// <returns>distance</returns>
+float Vector::CalcDistance(Vector& v)
+{
+    float fDist = 0.0f;
+    Vector vTemp = *this - v;
+    # pragma omp parallel for schedule(static) reduction(+: fDist)
+    for( int i = 0; i < _iR; i++ ) {
+        fDist += vTemp[i] * vTemp[i];
     }
     fDist = sqrt(fDist);
     return fDist;

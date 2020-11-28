@@ -46,13 +46,11 @@ float Matrix::GetMaxDiagVal()
 }
 
 /// <summary>
-/// Fills matrix with random float values from interval specified by params. Ensure the dominance of diagonal,
-/// to meet this condition, values from diagonal
-/// can be out of specified interval.
+/// Fills matrix with random float values from interval specified by params.
+/// Due to meet diagonal dominance, values from diagonal can be out of specified interval 
 /// </summary>
 /// <param name="min - Minimum value to be possible random generated"></param>
 /// <param name="max - Maximum value to be possible random generated"></param>
-/// <returns>Maximum diagonal value</returns>
 void Matrix::Generate(double min, double max)
 {
     if( min > max ) {
@@ -60,12 +58,28 @@ void Matrix::Generate(double min, double max)
         max = min;
         min = max;
     }
+    float fSumAbs, fDif;
     auto seed = chrono::system_clock::now().time_since_epoch().count();
     default_random_engine gen((unsigned) seed);
     uniform_real_distribution<double> dDistr(min, max);
+    uniform_real_distribution<double> dDistrDiag(5.0, 20.0);
     for( int i = 0; i < _iR; i++ ) {
+        fSumAbs = 0.0f;
         for( int j = 0; j < _iC; j++ ) {
             _p[i][j] = (float) dDistr(gen);
+            fSumAbs += abs(_p[i][j]);
+            if( i == j ) {
+                fSumAbs -= abs(_p[i][i]);
+            }
+        }
+        if( fSumAbs >= abs(_p[i][i]) ) {
+            fDif = fSumAbs - abs(_p[i][i]);
+            if( _p[i][i] >= 0 ) {
+                _p[i][i] += fDif + (float) dDistrDiag(gen);
+            }
+            else {
+                _p[i][i] -= fDif + (float) dDistrDiag(gen);
+            }
         }
     }
 }
@@ -75,7 +89,7 @@ void Matrix::Generate(double min, double max)
 /// </summary>
 void Matrix::PrintMatrixToShell()
 {
-    int width = 12;
+    int width = 18;
     printf("Matrix:\n");
     for( int i = 0; i < _iR; i++ )
     {
@@ -146,6 +160,27 @@ Vector Matrix::MultiplyWithVector(Vector& x)
             for( ; j < _iC; j++ ) {
                 res[i] += (_p[i][j] * x[j]);
             }
+        }
+    }
+    return res;
+}
+#endif
+
+#if EXMODE == 2
+/// <summary>
+/// Multiply matrix with vector, and as result return new vector
+/// </summary>
+/// <param name="x - multiplicator of Vector type"></param>
+/// <returns>res - result in new Vector</returns>
+Vector Matrix::MultiplyWithVector(Vector& x)
+{
+    Vector res = Vector(_iR);
+    # pragma omp parallel for schedule(static)
+    for( int i = 0; i < x.GetLen(); i++ )
+    {
+        for( int j = 0; j < _iR; j++ )
+        {
+            res[i] += (_p[i][j] * x[j]);
         }
     }
     return res;
