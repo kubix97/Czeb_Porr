@@ -53,45 +53,9 @@ Vector CzebAlg(Matrix &A, Vector &x0, Vector &b, int iters, int s)
     return vX;
 }
 
-void GaussJordanAlgotithm(Matrix &A, Vector &x, Vector &b) {
-	float alfa;
-	int i = 0, j = 0, k = 0;
-	int n = A.GetNumOfRows() - 1;					// -1, because indexing starts from 0
-	cout << "Wymiar macierzy wynosi: " 
-		<< A.GetNumOfRows() << endl;
-	cout.precision(6);								// set precision
-	cout.setf(ios::fixed);
-
-	A.PrintMatrixToShell();
-
-	/* calculate Gauss-Jordan elimination */
-	for (k = 0; k <= n; k++) {						// petla wierszy eliminujacych
-													// (kolumn eliminowanych)
-	//	#pragma omp parallel for private(alfa,j)
-		for (i = 0; i <= n; i++) {					// petla modyfikacji wierszy
-													// ponizej i powyzej
-			if (i == k) continue;
-			alfa = A[i][k] / A[k][k];
-			for (j = k; j <= n; j++)				// petla kolumn w danym wierszu
-				A[i][j] = A[i][j] - alfa * A[k][j];
-			b[i] = b[i] - alfa * b[k];
-		}
-	}
-
-	A.PrintMatrixToShell();							// print matrix after Gauss-Jordan elimination	
-
-	/* calculate x vector which contains results */
-	for (k = 0; k <= n; k++) 
-		x[k] = b[k] / A[k][k];
-
-	printf("\nResults:\n");
-	for (i = 0; i <= n; i++)							// print results
-		cout << "x[" << i << "] = " << x[i] << endl;
-}
-
 int main()
 {
-	int rows = 16; 
+	int rows = 100; 
 	int cols = rows;
 	// Init all necessary vectors and matrix A
 	Matrix  A = Matrix(rows, cols);
@@ -103,7 +67,9 @@ int main()
 	//GaussJordanAlgotithm(A, vXZero, b);
 	//Gauss::GaussJordanAlgotithm(A, vXZero, b);
 	//Gauss::GaussJordanAlgorithmWithParalelization(A, vXZero, b);
-	Gauss::GaussJordanAlgorithmWithVectorization(A, vXZero, b);
+	//Gauss::GaussJordanAlgorithmWithVectorization(A, vXZero, b);
+
+	Gauss::PrintResults(vXZero);
 
 	return 0;
     
