@@ -117,39 +117,3 @@ Vector Matrix::MultiplyWithVector(Vector& x)
     }
     return res;
 }
-
-/*
-//----------------------------------------------------------------------------------------
-
-	//int     rows = 3; int cols = rows;
-	//// Init all necessary vectors and matrix A
-	//Matrix  A = Matrix(rows, cols);
-	//float   fMaxDiagVal = A.Generate(-50, 50);
-	//Vector  vXZero = Vector(rows);
-	//Vector  b = Vector(rows);
-
-	//b.Generate(-10.0, 10.0);
-	//// calculate s_prmCzbsz - step 0
-	//s_prmCzbsz.fBeta        = 2 * fMaxDiagVal;
-	//s_prmCzbsz.fOmegaZero   = (s_prmCzbsz.fBeta - s_prmCzbsz.fAlpha) / (s_prmCzbsz.fBeta + s_prmCzbsz.fAlpha);
-	//s_prmCzbsz.fC           = 2 / (s_prmCzbsz.fBeta + s_prmCzbsz.fAlpha);
-	//if( fabs(s_prmCzbsz.fBeta - s_prmCzbsz.fAlpha) > 0.00001f )
-	//{
-	//    s_prmCzbsz.fL = 2 * (s_prmCzbsz.fBeta + s_prmCzbsz.fAlpha) / (s_prmCzbsz.fBeta - s_prmCzbsz.fAlpha);
-	//}
-	//else {
-	//    s_prmCzbsz.fL = FLT_MAX;
-	//    printf ("L value is +inf!!!");
-	//}
-	// end of step 0
-
-	//TEST
-	/*
-	A.PrintMatrixToShell();
-	printf("Maximum diagonal value: %.6f\n", fMaxDiagVal);
-	printf("Vector b:\n");
-	b.PrintVectorToShell();
-	printf("Vector x:\n");
-	vXPrev.PrintVectorToShell();
-	*/
-	// END TEST

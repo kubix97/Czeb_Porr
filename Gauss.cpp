@@ -1,5 +1,6 @@
 #include <iostream>
 #include <chrono>
+#include <omp.h>
 #include "Gauss.h"
 #include "Matrix.h"
 #include "Vector.h"
@@ -117,6 +118,6 @@ void Gauss::GaussJordanAlgorithmWithVectorization(Matrix& A, Vector& x, Vector& 
 void Gauss::PrintResults(Vector& x)
 {
 	printf("\nResults:\n");
-	for (int i = 0; i <= x.GetLen(); i++)
+	for (int i = 0; i < x.GetLen(); i++)
 		std::cout << "x[" << i << "] = " << x[i] << std::endl;
 }
