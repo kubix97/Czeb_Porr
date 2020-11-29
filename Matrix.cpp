@@ -29,8 +29,12 @@ Matrix::Matrix(const Matrix& M)
     memcpy(_p[0], M._p[0], _iR * iC * sizeof(float));
 }
 
-Matrix::~Matrix() {
-    free(_p);
+Matrix::~Matrix()
+{
+    if( _p ) {
+        _aligned_free(_p[0]);
+        free(_p);
+    }
 }
 
 
@@ -251,11 +255,13 @@ Matrix Matrix::Transpose()
 
 Matrix& Matrix::operator = (const Matrix& M)
 {
-    if( _iR != M._iR && _iC != M._iC && _p ) {
-       _aligned_free(_p[0]); free(_p);
+    if( _iR != M._iR || _iC != M._iC ) {
+        if( _p ) {
+            _aligned_free(_p[0]); free(_p);
+        }
+        _iR = M._iR; _iC = M._iC;
+        AllocMatrix();
     }
-    _iR = M._iR; _iC = M._iC;
-    AllocMatrix();
     int     iC = _iC + (_iC % 4 ? 4 - _iC % 4 : 0);
     memcpy(_p[0], M._p[0], _iR * iC * sizeof(float));
     return *this;

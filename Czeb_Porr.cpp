@@ -40,6 +40,9 @@ Vector CzebAlg(Matrix &A, Vector &x0, Vector &b, int maxIters, int s, float accu
     auto start = chrono::high_resolution_clock::now();
     for( int i = 0; i < maxIters; i++ )
     {
+        if( (i + 1) % 1000 == 0 ) {
+            printf("ITR: %d\n", i);
+        }
         if( k >= s || i == 0 )
         {
             s_prmCzbsz.fOmega = s_prmCzbsz.fOmegaZero; s_prmCzbsz.fOmegaPrev = 0.0f; k = 0; vX = vXPrev;
@@ -180,7 +183,7 @@ int main()
         s_prmCzbsz.fL = FLT_MAX;
         printf("L value is +inf!!!");
     }
-    Vector vXRes = CzebAlg(A, vXZero, vB, 1e6, 1e5, 1e-6f);
+    Vector vXRes = CzebAlg(A, vXZero, vB, (int) 1e7, (int) 1e6, 1e-7f);
     printf("Result vector of x\n");
     vXRes.PrintVectorToShell();
 

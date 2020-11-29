@@ -55,8 +55,8 @@ void Vector::Generate(float min, float max)
         max = min;
         min = max;
     }
-    unsigned seed = chrono::system_clock::now().time_since_epoch().count();
-    default_random_engine gen(seed);
+    auto seed = chrono::system_clock::now().time_since_epoch().count();
+    default_random_engine gen((unsigned) seed);
     uniform_real_distribution<float> dDistr(min, max);
     for( int i = 0; i < _iR; i++ ) {
         _pv[i] = dDistr(gen);
@@ -548,11 +548,11 @@ float Vector::CalcDistance(Vector& v)
 
 Vector& Vector::operator = (const Vector& v)
 {
-    if( _iR != v._iR && _pv ) {
+    if( _iR != v._iR ) {
         _aligned_free(_pv);
+        _iR = v._iR;
+        _pv = (float*) _aligned_malloc(_iR * sizeof(float), MEMALIGN);
     }
-    _iR = v._iR;
-    _pv = (float*) _aligned_malloc(_iR * sizeof(float), MEMALIGN);
     memcpy(_pv, v._pv, _iR * sizeof(float));
     return *this;
 }
