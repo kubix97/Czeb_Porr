@@ -115,7 +115,7 @@ void ReadEquationFromFile(Matrix& A, Vector &b)
 
 int main()
 {
-	int rows = 500; 
+	int rows = 700; 
 	int cols = rows;
 
 	// Init all necessary vectors and matrix A

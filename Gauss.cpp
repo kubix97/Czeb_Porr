@@ -18,7 +18,7 @@ void Gauss::GaussJordanAlgotithm(Matrix &A, Vector &x, Vector &b)
 	/* calculate Gauss-Jordan elimination */
 	for (k = 0; k <= n; k++) {									// petla wierszy eliminujacych
 																// (kolumn eliminowanych)
-
+		#pragma loop(no_vector)
 		for (i = 0; i <= n; i++) {								// petla modyfikacji wierszy
 																// ponizej i powyzej
 			if (i == k) continue;
@@ -92,7 +92,7 @@ void Gauss::GaussJordanAlgorithmWithVectorization(Matrix& A, Vector& x, Vector& 
 	for (k = 0; k <= n; k++) {						// petla wierszy eliminujacych
 													// (kolumn eliminowanych)
 
-		#pragma omp simd							// dyrektywa zrownoleglajaca
+		#pragma omp simd							// dyrektywa wektoryzujaca
 		for (i = 0; i <= n; i++) {					// petla modyfikacji wierszy
 													// ponizej i powyzej
 			if (i == k) continue;
