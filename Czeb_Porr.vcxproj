@@ -143,13 +143,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Gauss.cpp" />
+    <ClCompile Include="Equation.cpp" />
+    <ClCompile Include="GaussJordan.cpp" />
+    <ClCompile Include="GaussJordanTest.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Vector.cpp" />
     <ClCompile Include="Czeb_Porr.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Gauss.h" />
+    <ClInclude Include="Equation.h" />
+    <ClInclude Include="GaussJordan.h" />
+    <ClInclude Include="GaussJordanTest.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
