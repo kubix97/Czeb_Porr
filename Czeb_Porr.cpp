@@ -9,6 +9,11 @@
 #include "common.h"
 #include "Matrix.h"
 
+#include "GaussJordan.h"
+#include "GaussJordanTest.h"
+#include "Equation.h"
+#include "TestData.h"
+
 #if EXMODE == 2
 #include <omp.h>
 #endif
@@ -29,20 +34,26 @@ struct CZBPRM {
 
 static CZBPRM s_prmCzbsz;
 
-
+/// <summary>
+/// 
+/// </summary>
+/// <param name="A"></param>
+/// <param name="x0"></param>
+/// <param name="b"></param>
+/// <param name="maxIters"></param>
+/// <param name="s"></param>
+/// <param name="accuracy"></param>
+/// <returns></returns>
 Vector CzebAlg(Matrix &A, Vector &x0, Vector &b, int maxIters, int s, float accuracy)
 {
     Vector  vXPrev = Vector(x0.GetLen());
-    int     k = 0;
+    int     i, k = 0;
     Vector  vX = Vector(x0.GetLen()); // current x start filled with zeros
     Vector  vTemp, vTm;
     float   fCff;
     auto start = chrono::high_resolution_clock::now();
-    for( int i = 0; i < maxIters; i++ )
+    for( i = 0; i < maxIters; i++ )
     {
-        if( (i + 1) % 1000 == 0 ) {
-            printf("ITR: %d\n", i);
-        }
         if( k >= s || i == 0 )
         {
             s_prmCzbsz.fOmega = s_prmCzbsz.fOmegaZero; s_prmCzbsz.fOmegaPrev = 0.0f; k = 0; vX = vXPrev;
@@ -58,7 +69,6 @@ Vector CzebAlg(Matrix &A, Vector &x0, Vector &b, int maxIters, int s, float accu
 
         vXPrev = vX; vX = vTemp; s_prmCzbsz.fOmegaPrev = s_prmCzbsz.fOmega; s_prmCzbsz.fOmega = 1 / (s_prmCzbsz.fL - s_prmCzbsz.fOmega);
         if( vX.CalcDistance(vXPrev) < accuracy ) {
-            printf("Cheb iteration stops after %d iterations\n", i + 1);
             maxIters = i + 1; // save num of iterations to calcuate execution time per iteration
             break;
         }
@@ -67,6 +77,7 @@ Vector CzebAlg(Matrix &A, Vector &x0, Vector &b, int maxIters, int s, float accu
     auto end = chrono::high_resolution_clock::now();
     double duration = (double) chrono::duration_cast<chrono::nanoseconds>(end - start).count();
     duration *= 1e-9;
+    printf("\nCheb [MD: %d] iteration stops after %d iterations - matrix %d x %d\n", EXMODE, i + 1, A.GetNumOfRows(), A. GetNumOfCals());
     printf("Execution time = %.9f sec = %.9f ms\nAverage time per iteration = %.9f ms\n", duration, duration*1e3, duration*1e3/maxIters);
     return vX;
 }
@@ -75,7 +86,7 @@ void PrintEquationToFile(Matrix& A, Vector& b)
 {
     ofstream file;
     int iR = A.GetNumOfRows(), iC = A.GetNumOfCals();
-    file.open("Dane.txt");
+    file.open("EquationsCheb//EquationCheb_10.txt");
     if( file.is_open() )
     {
         file << fixed << setprecision(6);
@@ -97,6 +108,40 @@ void PrintEquationToFile(Matrix& A, Vector& b)
     }
 }
 
+void ReadEquationFromFile(Matrix& A, Vector& b)
+{
+    ifstream file;
+    int iR = 0, iC = 0;
+
+    file.open("equations//equation_data_10.txt");
+    if( file.is_open() )
+    {
+        file >> fixed >> setprecision(6);
+        file >> iR >> iC;
+
+        // check if matrix has proper size
+        if( iR <= 0 && iC <= 0 ) {
+            printf("Matrix must have at least one row");
+            return;
+        }
+
+        // read A matrix
+        for( int i = 0; i < iR; i++ )
+            for( int j = 0; j < iC; j++ )
+                file >> A[i][j];
+
+        // read b vector
+        for( int i = 0; i < iC; i++ )
+            file >> b[i];
+
+        file.close();
+    }
+    else {
+        printf("Unable to wtrite to file");
+    }
+}
+
+
 #if EXMODE == 2
 void OpenMpSet(int iDim) {
     //int iProcs = omp_get_num_procs();
@@ -111,65 +156,37 @@ void OpenMpSet(int iDim) {
 }
 #endif
 
-int main()
+/// <summary>
+/// Czebyszew algorithm evaluation
+/// </summary>
+/// <returns></returns>
+void Czebyszew(int iRows)
 {
-    int     rows = 50; int cols = rows;
-    #if EXMODE == 2
-    OpenMpSet(rows);
-    #endif
-    
-    // TEST
-    //float tabAtst[5][5] = {1.0f, 2.0f, 3.0f, 4.0f, 1.0f,
-    //    -1.0f, -4.0f, 3.0f, 4.0f, 1.0f,
-    //    2.0f, 3.0f, 4.0f, -5.0f, 1.0f,
-    //    -6.0f, 3.0f, 2.0f, 1.0f, -2.0f,
-    //    6.0f, -2.0f, -1.0f, 1.0f, 4.0f};
-    //Matrix Atst = Matrix(rows,cols);
-    //Atst.GenWithFixedVal(tabAtst);
-    //Atst.PrintMatrixToShell();
-    //Matrix Test= Atst.Transpose();
-    //Test.PrintMatrixToShell();
-    //Atst = Atst.MultiplyWithMatrix(Test);
-    //Atst.PrintMatrixToShell();
-    //float tabB[5] = {-5.0f, 51.0f, 17.0f, -165.0f, 168.0f};
-    ////float tabC[5] = {1.0f, 2.0f, 3.0f, 4.0f, 5.0f};
-    //Vector btst = Vector(rows);
-    //btst.GenWithFixedVal(rows, tabB);
-    //printf("Vector bTest:\n");
-    //btst.PrintVectorToShell();
-    ////PrintEquationToFile(Atst, btst);
-    //float fMaxDiagVal = Atst.GetMaxDiagVal();
-    //printf("Max diagonal value: %f\n", fMaxDiagVal);
-    //Vector  vXZero = Vector(rows);
+    int     rows = iRows; int cols = rows;
+    bool    bReadFromFile = false;
 
-    //// calculate s_prmCzbsz
-    //s_prmCzbsz.fBeta        = 2 * fMaxDiagVal;
-    //s_prmCzbsz.fOmegaZero   = (s_prmCzbsz.fBeta - s_prmCzbsz.fAlpha) / (s_prmCzbsz.fBeta + s_prmCzbsz.fAlpha);
-    //s_prmCzbsz.fC           = 2 / (s_prmCzbsz.fBeta + s_prmCzbsz.fAlpha);
-    //if( fabs(s_prmCzbsz.fBeta - s_prmCzbsz.fAlpha) > 0.00001f )
-    //{
-    //    s_prmCzbsz.fL = 2 * (s_prmCzbsz.fBeta + s_prmCzbsz.fAlpha) / (s_prmCzbsz.fBeta - s_prmCzbsz.fAlpha);
-    //}
-    //else {
-    //    s_prmCzbsz.fL = FLT_MAX;
-    //    printf ("L value is +inf!!!");
-    //}
-    //Vector Xtst = CzebAlg( Atst, vXZero, btst, 1000, 30000, 1e-8f);
-    //printf("Vector Xres:\n");
-    //Xtst.PrintVectorToShell(); // X result should be [-1;2;1;-2;1]
-    // END TEST
+#if EXMODE == 2
+    OpenMpSet(rows);
+#endif
 
     // Init all necessary vectors and matrix A
-    Matrix  G = Matrix(rows, cols);
-    G.Generate(-10, 10);
-    Matrix Gt = G.Transpose();
-    Matrix A = G.MultiplyWithMatrix(Gt);
-    G.PrintMatrixToShell(); Gt.PrintMatrixToShell();
-    A.PrintMatrixToShell();
+
+    Matrix A = Matrix(rows, cols);
+    Vector vB = Vector(rows);
+    if( !bReadFromFile )
+    {
+        Matrix  G = Matrix(rows, cols);
+        G.Generate(-10, 10);
+        Matrix Gt = G.Transpose();
+        A = G.MultiplyWithMatrix(Gt);
+        vB.Generate(-10000, 10000.0);
+        //G.PrintMatrixToShell(); Gt.PrintMatrixToShell();
+        PrintEquationToFile(A, vB);
+    }
+    else {
+        ReadEquationFromFile(A, vB);
+    }
     Vector  vXZero = Vector(rows);
-    Vector  vB = Vector(rows);
-    vB.Generate(-10000, 10000.0);
-    PrintEquationToFile(A, vB);
     float fMaxDiagVal = A.GetMaxDiagVal();
     // calculate s_prmCzbsz
     s_prmCzbsz.fBeta = 2 * fMaxDiagVal;
@@ -183,11 +200,67 @@ int main()
         s_prmCzbsz.fL = FLT_MAX;
         printf("L value is +inf!!!");
     }
-    Vector vXRes = CzebAlg(A, vXZero, vB, (int) 1e7, (int) 1e6, 1e-7f);
-    printf("Result vector of x\n");
-    vXRes.PrintVectorToShell();
+    Vector vXRes = CzebAlg(A, vXZero, vB, (int) 1e6, (int) 2e5, 6e-7f);
+    //vXRes.PrintVectorToShell();
+}
 
-    
-    
-    
+/// <summary>
+/// Application starup
+/// </summary>
+/// <param name="argc"></param>
+/// <param name="argv"></param>
+/// <returns></returns>
+int main(int argc, char* argv[])
+{
+    int     iMode = 0;
+    if( argc >= 2 )
+    {
+        if( 0 == _stricmp(argv[1], "-gj") ) {
+            iMode = 1;
+        }
+    }
+    if( 0 == iMode )
+    {
+        Czebyszew(10);
+        
+        Czebyszew(30);
+        
+
+        Czebyszew(50);
+        
+
+        Czebyszew(70);
+        
+
+        Czebyszew(100);
+       
+
+        Czebyszew(150);
+        
+
+        Czebyszew(200);
+        
+
+        Czebyszew(300);
+       
+
+        Czebyszew(400);
+       
+
+        Czebyszew(500);
+        
+
+        Czebyszew(600);
+        
+
+        Czebyszew(700);
+       
+
+    }
+    else
+    {
+        TestData td = TestData();
+        GaussJordanTest test = GaussJordanTest();
+        test.performTestGroupOnExistingEquation(5);
+    }
 }

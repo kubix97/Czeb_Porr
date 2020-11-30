@@ -1,0 +1,715 @@
+10 rows:
+	Wersja sekwencyjna:		0.218500000 ms
+	Wersja zrównoleglona:		0.217200000 ms
+	Wersja z wektoryzacj¹:		0.215700000 ms
+
+10 rows:
+	Wersja sekwencyjna:		0.217800000 ms
+	Wersja zrównoleglona:		0.341600000 ms
+	Wersja z wektoryzacj¹:		0.243500000 ms
+
+10 rows:
+	Wersja sekwencyjna:		0.310100000 ms
+	Wersja zrównoleglona:		0.217200000 ms
+	Wersja z wektoryzacj¹:		0.371300000 ms
+
+10 rows:
+	Wersja sekwencyjna:		0.226500000 ms
+	Wersja zrównoleglona:		0.281700000 ms
+	Wersja z wektoryzacj¹:		0.389700000 ms
+
+10 rows:
+	Wersja sekwencyjna:		0.217300000 ms
+	Wersja zrównoleglona:		0.218000000 ms
+	Wersja z wektoryzacj¹:		0.217200000 ms
+
+30 rows:
+	Wersja sekwencyjna:		2.777200000 ms
+	Wersja zrównoleglona:		2.953900000 ms
+	Wersja z wektoryzacj¹:		2.743800000 ms
+
+30 rows:
+	Wersja sekwencyjna:		4.400200000 ms
+	Wersja zrównoleglona:		5.921100000 ms
+	Wersja z wektoryzacj¹:		4.992700000 ms
+
+30 rows:
+	Wersja sekwencyjna:		2.770600000 ms
+	Wersja zrównoleglona:		2.852400000 ms
+	Wersja z wektoryzacj¹:		3.307000000 ms
+
+30 rows:
+	Wersja sekwencyjna:		2.853000000 ms
+	Wersja zrównoleglona:		2.766700000 ms
+	Wersja z wektoryzacj¹:		2.746000000 ms
+
+30 rows:
+	Wersja sekwencyjna:		5.763900000 ms
+	Wersja zrównoleglona:		4.850900000 ms
+	Wersja z wektoryzacj¹:		4.967600000 ms
+
+50 rows:
+	Wersja sekwencyjna:		7.621400000 ms
+	Wersja zrównoleglona:		7.452000000 ms
+	Wersja z wektoryzacj¹:		7.304100000 ms
+
+50 rows:
+	Wersja sekwencyjna:		12.292100000 ms
+	Wersja zrównoleglona:		12.437300000 ms
+	Wersja z wektoryzacj¹:		12.295100000 ms
+
+50 rows:
+	Wersja sekwencyjna:		13.345000000 ms
+	Wersja zrównoleglona:		13.382600000 ms
+	Wersja z wektoryzacj¹:		12.679900000 ms
+
+50 rows:
+	Wersja sekwencyjna:		7.740900000 ms
+	Wersja zrównoleglona:		8.214900000 ms
+	Wersja z wektoryzacj¹:		10.826500000 ms
+
+50 rows:
+	Wersja sekwencyjna:		4.958800000 ms
+	Wersja zrównoleglona:		5.129100000 ms
+	Wersja z wektoryzacj¹:		4.978600000 ms
+
+70 rows:
+	Wersja sekwencyjna:		13.916800000 ms
+	Wersja zrównoleglona:		14.592400000 ms
+	Wersja z wektoryzacj¹:		15.469200000 ms
+
+70 rows:
+	Wersja sekwencyjna:		13.478100000 ms
+	Wersja zrównoleglona:		14.430800000 ms
+	Wersja z wektoryzacj¹:		13.223500000 ms
+
+70 rows:
+	Wersja sekwencyjna:		14.858000000 ms
+	Wersja zrównoleglona:		15.970100000 ms
+	Wersja z wektoryzacj¹:		15.954000000 ms
+
+70 rows:
+	Wersja sekwencyjna:		14.274700000 ms
+	Wersja zrównoleglona:		13.481100000 ms
+	Wersja z wektoryzacj¹:		14.976500000 ms
+
+70 rows:
+	Wersja sekwencyjna:		13.732300000 ms
+	Wersja zrównoleglona:		14.304300000 ms
+	Wersja z wektoryzacj¹:		13.946500000 ms
+
+100 rows:
+	Wersja sekwencyjna:		38.072700000 ms
+	Wersja zrównoleglona:		40.689600000 ms
+	Wersja z wektoryzacj¹:		45.090100000 ms
+
+100 rows:
+	Wersja sekwencyjna:		40.849800000 ms
+	Wersja zrównoleglona:		39.769000000 ms
+	Wersja z wektoryzacj¹:		122.952300000 ms
+
+100 rows:
+	Wersja sekwencyjna:		38.942600000 ms
+	Wersja zrównoleglona:		38.605000000 ms
+	Wersja z wektoryzacj¹:		55.093500000 ms
+
+100 rows:
+	Wersja sekwencyjna:		65.200800000 ms
+	Wersja zrównoleglona:		113.623800000 ms
+	Wersja z wektoryzacj¹:		89.161200000 ms
+
+100 rows:
+	Wersja sekwencyjna:		38.522400000 ms
+	Wersja zrównoleglona:		104.730600000 ms
+	Wersja z wektoryzacj¹:		39.688100000 ms
+
+150 rows:
+	Wersja sekwencyjna:		239.458500000 ms
+	Wersja zrównoleglona:		128.972500000 ms
+	Wersja z wektoryzacj¹:		126.345000000 ms
+
+150 rows:
+	Wersja sekwencyjna:		128.133000000 ms
+	Wersja zrównoleglona:		129.388300000 ms
+	Wersja z wektoryzacj¹:		128.257500000 ms
+
+150 rows:
+	Wersja sekwencyjna:		129.115700000 ms
+	Wersja zrównoleglona:		246.707900000 ms
+	Wersja z wektoryzacj¹:		179.732400000 ms
+
+150 rows:
+	Wersja sekwencyjna:		130.392700000 ms
+	Wersja zrównoleglona:		129.707500000 ms
+	Wersja z wektoryzacj¹:		161.190400000 ms
+
+150 rows:
+	Wersja sekwencyjna:		206.455100000 ms
+	Wersja zrównoleglona:		184.714500000 ms
+	Wersja z wektoryzacj¹:		177.094100000 ms
+
+200 rows:
+	Wersja sekwencyjna:		374.825700000 ms
+	Wersja zrównoleglona:		492.890500000 ms
+	Wersja z wektoryzacj¹:		320.716700000 ms
+
+200 rows:
+	Wersja sekwencyjna:		409.726100000 ms
+	Wersja zrównoleglona:		419.095100000 ms
+	Wersja z wektoryzacj¹:		478.447200000 ms
+
+200 rows:
+	Wersja sekwencyjna:		444.593300000 ms
+	Wersja zrównoleglona:		465.067700000 ms
+	Wersja z wektoryzacj¹:		526.811900000 ms
+
+200 rows:
+	Wersja sekwencyjna:		367.247000000 ms
+	Wersja zrównoleglona:		305.617100000 ms
+	Wersja z wektoryzacj¹:		332.312200000 ms
+
+200 rows:
+	Wersja sekwencyjna:		371.390400000 ms
+	Wersja zrównoleglona:		417.965100000 ms
+	Wersja z wektoryzacj¹:		421.336800000 ms
+
+300 rows:
+	Wersja sekwencyjna:		1020.836200000 ms
+	Wersja zrównoleglona:		1270.584100000 ms
+	Wersja z wektoryzacj¹:		1245.893100000 ms
+
+10 rows:
+	Wersja sekwencyjna:		0.002400000 ms
+	Wersja zrównoleglona:		0.979400000 ms
+	Wersja z wektoryzacj¹:		0.003200000 ms
+
+10 rows:
+	Wersja sekwencyjna:		0.003100000 ms
+	Wersja zrównoleglona:		0.060200000 ms
+	Wersja z wektoryzacj¹:		0.002800000 ms
+
+10 rows:
+	Wersja sekwencyjna:		0.002900000 ms
+	Wersja zrównoleglona:		0.077200000 ms
+	Wersja z wektoryzacj¹:		0.002700000 ms
+
+10 rows:
+	Wersja sekwencyjna:		0.002100000 ms
+	Wersja zrównoleglona:		0.043300000 ms
+	Wersja z wektoryzacj¹:		0.002300000 ms
+
+10 rows:
+	Wersja sekwencyjna:		0.003900000 ms
+	Wersja zrównoleglona:		0.222000000 ms
+	Wersja z wektoryzacj¹:		0.002200000 ms
+
+30 rows:
+	Wersja sekwencyjna:		0.040800000 ms
+	Wersja zrównoleglona:		0.157100000 ms
+	Wersja z wektoryzacj¹:		0.029400000 ms
+
+30 rows:
+	Wersja sekwencyjna:		0.035800000 ms
+	Wersja zrównoleglona:		0.108100000 ms
+	Wersja z wektoryzacj¹:		0.032500000 ms
+
+30 rows:
+	Wersja sekwencyjna:		0.035700000 ms
+	Wersja zrównoleglona:		0.110800000 ms
+	Wersja z wektoryzacj¹:		0.032600000 ms
+
+30 rows:
+	Wersja sekwencyjna:		0.035500000 ms
+	Wersja zrównoleglona:		0.144400000 ms
+	Wersja z wektoryzacj¹:		0.032600000 ms
+
+30 rows:
+	Wersja sekwencyjna:		0.035800000 ms
+	Wersja zrównoleglona:		0.118000000 ms
+	Wersja z wektoryzacj¹:		0.032800000 ms
+
+50 rows:
+	Wersja sekwencyjna:		0.161500000 ms
+	Wersja zrównoleglona:		0.198700000 ms
+	Wersja z wektoryzacj¹:		0.147200000 ms
+
+50 rows:
+	Wersja sekwencyjna:		0.160400000 ms
+	Wersja zrównoleglona:		0.222400000 ms
+	Wersja z wektoryzacj¹:		0.155800000 ms
+
+50 rows:
+	Wersja sekwencyjna:		0.160000000 ms
+	Wersja zrównoleglona:		0.212800000 ms
+	Wersja z wektoryzacj¹:		0.148500000 ms
+
+50 rows:
+	Wersja sekwencyjna:		0.159600000 ms
+	Wersja zrównoleglona:		0.212000000 ms
+	Wersja z wektoryzacj¹:		0.146300000 ms
+
+50 rows:
+	Wersja sekwencyjna:		0.159700000 ms
+	Wersja zrównoleglona:		0.193700000 ms
+	Wersja z wektoryzacj¹:		0.147000000 ms
+
+70 rows:
+	Wersja sekwencyjna:		0.449000000 ms
+	Wersja zrównoleglona:		0.294700000 ms
+	Wersja z wektoryzacj¹:		0.402500000 ms
+
+70 rows:
+	Wersja sekwencyjna:		0.424300000 ms
+	Wersja zrównoleglona:		0.321700000 ms
+	Wersja z wektoryzacj¹:		0.389700000 ms
+
+70 rows:
+	Wersja sekwencyjna:		0.423900000 ms
+	Wersja zrównoleglona:		0.328600000 ms
+	Wersja z wektoryzacj¹:		0.413800000 ms
+
+70 rows:
+	Wersja sekwencyjna:		0.421100000 ms
+	Wersja zrównoleglona:		0.363900000 ms
+	Wersja z wektoryzacj¹:		0.389500000 ms
+
+70 rows:
+	Wersja sekwencyjna:		0.440700000 ms
+	Wersja zrównoleglona:		0.340800000 ms
+	Wersja z wektoryzacj¹:		0.391500000 ms
+
+100 rows:
+	Wersja sekwencyjna:		1.418400000 ms
+	Wersja zrównoleglona:		0.451500000 ms
+	Wersja z wektoryzacj¹:		1.274100000 ms
+
+100 rows:
+	Wersja sekwencyjna:		1.552200000 ms
+	Wersja zrównoleglona:		0.442800000 ms
+	Wersja z wektoryzacj¹:		1.262700000 ms
+
+100 rows:
+	Wersja sekwencyjna:		1.433000000 ms
+	Wersja zrównoleglona:		0.454900000 ms
+	Wersja z wektoryzacj¹:		1.223200000 ms
+
+100 rows:
+	Wersja sekwencyjna:		1.415100000 ms
+	Wersja zrównoleglona:		0.453000000 ms
+	Wersja z wektoryzacj¹:		1.270900000 ms
+
+100 rows:
+	Wersja sekwencyjna:		1.295800000 ms
+	Wersja zrównoleglona:		0.464800000 ms
+	Wersja z wektoryzacj¹:		1.270200000 ms
+
+150 rows:
+	Wersja sekwencyjna:		2.828200000 ms
+	Wersja zrównoleglona:		0.637600000 ms
+	Wersja z wektoryzacj¹:		4.478500000 ms
+
+150 rows:
+	Wersja sekwencyjna:		2.490500000 ms
+	Wersja zrównoleglona:		0.642700000 ms
+	Wersja z wektoryzacj¹:		4.438600000 ms
+
+150 rows:
+	Wersja sekwencyjna:		2.465500000 ms
+	Wersja zrównoleglona:		0.686300000 ms
+	Wersja z wektoryzacj¹:		4.325800000 ms
+
+150 rows:
+	Wersja sekwencyjna:		2.809000000 ms
+	Wersja zrównoleglona:		0.869000000 ms
+	Wersja z wektoryzacj¹:		4.500500000 ms
+
+150 rows:
+	Wersja sekwencyjna:		2.516900000 ms
+	Wersja zrównoleglona:		0.681300000 ms
+	Wersja z wektoryzacj¹:		4.396900000 ms
+
+200 rows:
+	Wersja sekwencyjna:		13.820100000 ms
+	Wersja zrównoleglona:		3.310600000 ms
+	Wersja z wektoryzacj¹:		25.567600000 ms
+
+200 rows:
+	Wersja sekwencyjna:		6.113700000 ms
+	Wersja zrównoleglona:		0.883400000 ms
+	Wersja z wektoryzacj¹:		10.477400000 ms
+
+200 rows:
+	Wersja sekwencyjna:		5.945600000 ms
+	Wersja zrównoleglona:		0.932300000 ms
+	Wersja z wektoryzacj¹:		10.200200000 ms
+
+200 rows:
+	Wersja sekwencyjna:		5.848100000 ms
+	Wersja zrównoleglona:		0.981900000 ms
+	Wersja z wektoryzacj¹:		10.746900000 ms
+
+200 rows:
+	Wersja sekwencyjna:		5.821400000 ms
+	Wersja zrównoleglona:		0.985700000 ms
+	Wersja z wektoryzacj¹:		10.031600000 ms
+
+300 rows:
+	Wersja sekwencyjna:		45.276600000 ms
+	Wersja zrównoleglona:		3.070300000 ms
+	Wersja z wektoryzacj¹:		38.923000000 ms
+
+300 rows:
+	Wersja sekwencyjna:		19.359300000 ms
+	Wersja zrównoleglona:		1.706500000 ms
+	Wersja z wektoryzacj¹:		66.108400000 ms
+
+300 rows:
+	Wersja sekwencyjna:		18.856600000 ms
+	Wersja zrównoleglona:		1.631800000 ms
+	Wersja z wektoryzacj¹:		35.004000000 ms
+
+300 rows:
+	Wersja sekwencyjna:		50.923800000 ms
+	Wersja zrównoleglona:		8.774900000 ms
+	Wersja z wektoryzacj¹:		55.065200000 ms
+
+300 rows:
+	Wersja sekwencyjna:		18.516500000 ms
+	Wersja zrównoleglona:		1.664000000 ms
+	Wersja z wektoryzacj¹:		50.506900000 ms
+
+400 rows:
+	Wersja sekwencyjna:		44.666300000 ms
+	Wersja zrównoleglona:		3.066100000 ms
+	Wersja z wektoryzacj¹:		82.838600000 ms
+
+400 rows:
+	Wersja sekwencyjna:		86.368200000 ms
+	Wersja zrównoleglona:		8.837200000 ms
+	Wersja z wektoryzacj¹:		88.535400000 ms
+
+400 rows:
+	Wersja sekwencyjna:		45.193600000 ms
+	Wersja zrównoleglona:		3.183400000 ms
+	Wersja z wektoryzacj¹:		82.522100000 ms
+
+400 rows:
+	Wersja sekwencyjna:		44.492500000 ms
+	Wersja zrównoleglona:		20.550400000 ms
+	Wersja z wektoryzacj¹:		108.745100000 ms
+
+400 rows:
+	Wersja sekwencyjna:		46.440300000 ms
+	Wersja zrównoleglona:		6.178900000 ms
+	Wersja z wektoryzacj¹:		81.571600000 ms
+
+500 rows:
+	Wersja sekwencyjna:		86.019500000 ms
+	Wersja zrównoleglona:		5.495100000 ms
+	Wersja z wektoryzacj¹:		128.337000000 ms
+
+500 rows:
+	Wersja sekwencyjna:		86.780100000 ms
+	Wersja zrównoleglona:		5.436400000 ms
+	Wersja z wektoryzacj¹:		126.332900000 ms
+
+10 rows:
+	Wersja sekwencyjna:		0.002200000 ms
+	Wersja zrównoleglona:		0.685500000 ms
+	Wersja z wektoryzacj¹:		0.003700000 ms
+
+10 rows:
+	Wersja sekwencyjna:		0.003100000 ms
+	Wersja zrównoleglona:		0.074300000 ms
+	Wersja z wektoryzacj¹:		0.003000000 ms
+
+10 rows:
+	Wersja sekwencyjna:		0.002000000 ms
+	Wersja zrównoleglona:		0.060700000 ms
+	Wersja z wektoryzacj¹:		0.002100000 ms
+
+10 rows:
+	Wersja sekwencyjna:		0.002500000 ms
+	Wersja zrównoleglona:		0.038200000 ms
+	Wersja z wektoryzacj¹:		0.002100000 ms
+
+10 rows:
+	Wersja sekwencyjna:		0.002300000 ms
+	Wersja zrównoleglona:		0.054900000 ms
+	Wersja z wektoryzacj¹:		0.002000000 ms
+
+30 rows:
+	Wersja sekwencyjna:		0.044800000 ms
+	Wersja zrównoleglona:		0.113900000 ms
+	Wersja z wektoryzacj¹:		0.033700000 ms
+
+30 rows:
+	Wersja sekwencyjna:		0.044900000 ms
+	Wersja zrównoleglona:		0.053500000 ms
+	Wersja z wektoryzacj¹:		0.040800000 ms
+
+30 rows:
+	Wersja sekwencyjna:		0.044900000 ms
+	Wersja zrównoleglona:		0.046700000 ms
+	Wersja z wektoryzacj¹:		0.040400000 ms
+
+30 rows:
+	Wersja sekwencyjna:		0.047500000 ms
+	Wersja zrównoleglona:		0.055200000 ms
+	Wersja z wektoryzacj¹:		0.043200000 ms
+
+30 rows:
+	Wersja sekwencyjna:		0.045000000 ms
+	Wersja zrównoleglona:		0.048800000 ms
+	Wersja z wektoryzacj¹:		0.041800000 ms
+
+50 rows:
+	Wersja sekwencyjna:		0.196700000 ms
+	Wersja zrównoleglona:		0.096100000 ms
+	Wersja z wektoryzacj¹:		0.183100000 ms
+
+50 rows:
+	Wersja sekwencyjna:		0.195300000 ms
+	Wersja zrównoleglona:		0.093200000 ms
+	Wersja z wektoryzacj¹:		0.183600000 ms
+
+50 rows:
+	Wersja sekwencyjna:		0.196000000 ms
+	Wersja zrównoleglona:		0.094900000 ms
+	Wersja z wektoryzacj¹:		0.188000000 ms
+
+50 rows:
+	Wersja sekwencyjna:		0.195900000 ms
+	Wersja zrównoleglona:		0.096400000 ms
+	Wersja z wektoryzacj¹:		0.182600000 ms
+
+50 rows:
+	Wersja sekwencyjna:		0.195500000 ms
+	Wersja zrównoleglona:		0.101200000 ms
+	Wersja z wektoryzacj¹:		0.183100000 ms
+
+70 rows:
+	Wersja sekwencyjna:		0.504600000 ms
+	Wersja zrównoleglona:		0.321200000 ms
+	Wersja z wektoryzacj¹:		0.479600000 ms
+
+70 rows:
+	Wersja sekwencyjna:		0.543800000 ms
+	Wersja zrównoleglona:		0.157300000 ms
+	Wersja z wektoryzacj¹:		0.480400000 ms
+
+70 rows:
+	Wersja sekwencyjna:		0.525400000 ms
+	Wersja zrównoleglona:		0.144300000 ms
+	Wersja z wektoryzacj¹:		0.421400000 ms
+
+70 rows:
+	Wersja sekwencyjna:		0.524700000 ms
+	Wersja zrównoleglona:		0.149100000 ms
+	Wersja z wektoryzacj¹:		0.479900000 ms
+
+70 rows:
+	Wersja sekwencyjna:		0.533900000 ms
+	Wersja zrównoleglona:		0.141100000 ms
+	Wersja z wektoryzacj¹:		0.482500000 ms
+
+100 rows:
+	Wersja sekwencyjna:		1.228200000 ms
+	Wersja zrównoleglona:		0.558600000 ms
+	Wersja z wektoryzacj¹:		1.117000000 ms
+
+100 rows:
+	Wersja sekwencyjna:		1.521100000 ms
+	Wersja zrównoleglona:		0.226400000 ms
+	Wersja z wektoryzacj¹:		1.366300000 ms
+
+100 rows:
+	Wersja sekwencyjna:		1.391400000 ms
+	Wersja zrównoleglona:		0.233900000 ms
+	Wersja z wektoryzacj¹:		1.443400000 ms
+
+100 rows:
+	Wersja sekwencyjna:		1.504400000 ms
+	Wersja zrównoleglona:		0.234200000 ms
+	Wersja z wektoryzacj¹:		1.365600000 ms
+
+100 rows:
+	Wersja sekwencyjna:		1.458500000 ms
+	Wersja zrównoleglona:		0.518000000 ms
+	Wersja z wektoryzacj¹:		1.362900000 ms
+
+150 rows:
+	Wersja sekwencyjna:		3.442400000 ms
+	Wersja zrównoleglona:		2.455600000 ms
+	Wersja z wektoryzacj¹:		3.587500000 ms
+
+150 rows:
+	Wersja sekwencyjna:		2.354000000 ms
+	Wersja zrównoleglona:		0.897700000 ms
+	Wersja z wektoryzacj¹:		3.424400000 ms
+
+150 rows:
+	Wersja sekwencyjna:		2.431900000 ms
+	Wersja zrównoleglona:		0.822800000 ms
+	Wersja z wektoryzacj¹:		3.266300000 ms
+
+150 rows:
+	Wersja sekwencyjna:		3.761800000 ms
+	Wersja zrównoleglona:		0.963500000 ms
+	Wersja z wektoryzacj¹:		3.535800000 ms
+
+150 rows:
+	Wersja sekwencyjna:		2.433300000 ms
+	Wersja zrównoleglona:		0.889100000 ms
+	Wersja z wektoryzacj¹:		3.711800000 ms
+
+200 rows:
+	Wersja sekwencyjna:		5.543800000 ms
+	Wersja zrównoleglona:		0.654000000 ms
+	Wersja z wektoryzacj¹:		10.518100000 ms
+
+200 rows:
+	Wersja sekwencyjna:		5.561700000 ms
+	Wersja zrównoleglona:		0.677700000 ms
+	Wersja z wektoryzacj¹:		9.854300000 ms
+
+200 rows:
+	Wersja sekwencyjna:		5.455400000 ms
+	Wersja zrównoleglona:		0.698700000 ms
+	Wersja z wektoryzacj¹:		10.281000000 ms
+
+200 rows:
+	Wersja sekwencyjna:		24.163000000 ms
+	Wersja zrównoleglona:		3.038100000 ms
+	Wersja z wektoryzacj¹:		27.027600000 ms
+
+200 rows:
+	Wersja sekwencyjna:		5.382700000 ms
+	Wersja zrównoleglona:		0.680500000 ms
+	Wersja z wektoryzacj¹:		9.998400000 ms
+
+300 rows:
+	Wersja sekwencyjna:		18.439600000 ms
+	Wersja zrównoleglona:		1.445800000 ms
+	Wersja z wektoryzacj¹:		34.051500000 ms
+
+300 rows:
+	Wersja sekwencyjna:		18.427300000 ms
+	Wersja zrównoleglona:		1.446700000 ms
+	Wersja z wektoryzacj¹:		34.308700000 ms
+
+300 rows:
+	Wersja sekwencyjna:		19.153200000 ms
+	Wersja zrównoleglona:		1.428200000 ms
+	Wersja z wektoryzacj¹:		34.940200000 ms
+
+300 rows:
+	Wersja sekwencyjna:		18.807300000 ms
+	Wersja zrównoleglona:		1.415100000 ms
+	Wersja z wektoryzacj¹:		35.019500000 ms
+
+300 rows:
+	Wersja sekwencyjna:		18.534900000 ms
+	Wersja zrównoleglona:		1.432200000 ms
+	Wersja z wektoryzacj¹:		34.749400000 ms
+
+400 rows:
+	Wersja sekwencyjna:		44.211200000 ms
+	Wersja zrównoleglona:		3.343800000 ms
+	Wersja z wektoryzacj¹:		82.827700000 ms
+
+400 rows:
+	Wersja sekwencyjna:		43.461100000 ms
+	Wersja zrównoleglona:		2.803900000 ms
+	Wersja z wektoryzacj¹:		81.617000000 ms
+
+400 rows:
+	Wersja sekwencyjna:		43.647100000 ms
+	Wersja zrównoleglona:		3.532000000 ms
+	Wersja z wektoryzacj¹:		82.089600000 ms
+
+400 rows:
+	Wersja sekwencyjna:		63.824400000 ms
+	Wersja zrównoleglona:		6.271200000 ms
+	Wersja z wektoryzacj¹:		83.427600000 ms
+
+400 rows:
+	Wersja sekwencyjna:		45.534800000 ms
+	Wersja zrównoleglona:		3.103200000 ms
+	Wersja z wektoryzacj¹:		81.695100000 ms
+
+500 rows:
+	Wersja sekwencyjna:		112.705900000 ms
+	Wersja zrównoleglona:		4.483200000 ms
+	Wersja z wektoryzacj¹:		127.240300000 ms
+
+500 rows:
+	Wersja sekwencyjna:		84.523400000 ms
+	Wersja zrównoleglona:		4.603600000 ms
+	Wersja z wektoryzacj¹:		131.844000000 ms
+
+500 rows:
+	Wersja sekwencyjna:		118.905200000 ms
+	Wersja zrównoleglona:		4.447900000 ms
+	Wersja z wektoryzacj¹:		130.778500000 ms
+
+500 rows:
+	Wersja sekwencyjna:		85.583400000 ms
+	Wersja zrównoleglona:		5.390000000 ms
+	Wersja z wektoryzacj¹:		133.422800000 ms
+
+500 rows:
+	Wersja sekwencyjna:		86.363000000 ms
+	Wersja zrównoleglona:		5.340600000 ms
+	Wersja z wektoryzacj¹:		127.839600000 ms
+
+600 rows:
+	Wersja sekwencyjna:		148.998600000 ms
+	Wersja zrównoleglona:		7.581800000 ms
+	Wersja z wektoryzacj¹:		185.908200000 ms
+
+600 rows:
+	Wersja sekwencyjna:		180.154500000 ms
+	Wersja zrównoleglona:		7.349400000 ms
+	Wersja z wektoryzacj¹:		187.293500000 ms
+
+600 rows:
+	Wersja sekwencyjna:		146.463300000 ms
+	Wersja zrównoleglona:		7.402500000 ms
+	Wersja z wektoryzacj¹:		180.619600000 ms
+
+600 rows:
+	Wersja sekwencyjna:		200.189600000 ms
+	Wersja zrównoleglona:		7.686000000 ms
+	Wersja z wektoryzacj¹:		185.097500000 ms
+
+600 rows:
+	Wersja sekwencyjna:		209.540400000 ms
+	Wersja zrównoleglona:		19.265100000 ms
+	Wersja z wektoryzacj¹:		189.919600000 ms
+
+700 rows:
+	Wersja sekwencyjna:		269.661300000 ms
+	Wersja zrównoleglona:		11.535900000 ms
+	Wersja z wektoryzacj¹:		258.232900000 ms
+
+700 rows:
+	Wersja sekwencyjna:		231.395000000 ms
+	Wersja zrównoleglona:		11.493700000 ms
+	Wersja z wektoryzacj¹:		254.723500000 ms
+
+700 rows:
+	Wersja sekwencyjna:		234.125200000 ms
+	Wersja zrównoleglona:		12.322800000 ms
+	Wersja z wektoryzacj¹:		254.157100000 ms
+
+700 rows:
+	Wersja sekwencyjna:		276.793700000 ms
+	Wersja zrównoleglona:		18.198700000 ms
+	Wersja z wektoryzacj¹:		254.963700000 ms
+
+700 rows:
+	Wersja sekwencyjna:		235.195700000 ms
+	Wersja zrównoleglona:		16.359000000 ms
+	Wersja z wektoryzacj¹:		257.135800000 ms
+

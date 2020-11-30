@@ -109,6 +109,7 @@
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
       <OpenMPSupport>true</OpenMPSupport>
+      <AdditionalOptions>-openmp:experimental %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,13 +147,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Equation.cpp" />
+    <ClCompile Include="GaussJordan.cpp" />
+    <ClCompile Include="GaussJordanTest.cpp" />
     <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="TestData.cpp" />
     <ClCompile Include="Vector.cpp" />
     <ClCompile Include="Czeb_Porr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common.h" />
+    <ClInclude Include="Equation.h" />
+    <ClInclude Include="GaussJordan.h" />
+    <ClInclude Include="GaussJordanTest.h" />
     <ClInclude Include="Matrix.h" />
+    <ClInclude Include="TestData.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

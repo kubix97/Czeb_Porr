@@ -1,0 +1,48 @@
+
+Cheb [MD: 1] iteration stops after 84 iterations - matrix 10 x 10
+Execution time = 0.000090300 sec = 0.090300000 ms
+Average time per iteration = 0.001075000 ms
+
+Cheb [MD: 1] iteration stops after 220 iterations - matrix 30 x 30
+Execution time = 0.000408100 sec = 0.408100000 ms
+Average time per iteration = 0.001855000 ms
+
+Cheb [MD: 1] iteration stops after 306 iterations - matrix 50 x 50
+Execution time = 0.000745900 sec = 0.745900000 ms
+Average time per iteration = 0.002437582 ms
+
+Cheb [MD: 1] iteration stops after 403 iterations - matrix 70 x 70
+Execution time = 0.001300300 sec = 1.300300000 ms
+Average time per iteration = 0.003226551 ms
+
+Cheb [MD: 1] iteration stops after 547 iterations - matrix 100 x 100
+Execution time = 0.002297700 sec = 2.297700000 ms
+Average time per iteration = 0.004200548 ms
+
+Cheb [MD: 1] iteration stops after 778 iterations - matrix 150 x 150
+Execution time = 0.004465900 sec = 4.465900000 ms
+Average time per iteration = 0.005740231 ms
+
+Cheb [MD: 1] iteration stops after 966 iterations - matrix 200 x 200
+Execution time = 0.008636900 sec = 8.636900000 ms
+Average time per iteration = 0.008940890 ms
+
+Cheb [MD: 1] iteration stops after 1377 iterations - matrix 300 x 300
+Execution time = 0.027403700 sec = 27.403700000 ms
+Average time per iteration = 0.019901017 ms
+
+Cheb [MD: 1] iteration stops after 1756 iterations - matrix 400 x 400
+Execution time = 0.061431100 sec = 61.431100000 ms
+Average time per iteration = 0.034983542 ms
+
+Cheb [MD: 1] iteration stops after 2145 iterations - matrix 500 x 500
+Execution time = 0.121598100 sec = 121.598100000 ms
+Average time per iteration = 0.056689091 ms
+
+Cheb [MD: 1] iteration stops after 2511 iterations - matrix 600 x 600
+Execution time = 0.192261500 sec = 192.261500000 ms
+Average time per iteration = 0.076567702 ms
+
+Cheb [MD: 1] iteration stops after 2799 iterations - matrix 700 x 700
+Execution time = 0.302868700 sec = 302.868700000 ms
+Average time per iteration = 0.108206038 ms
