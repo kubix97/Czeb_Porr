@@ -22,7 +22,7 @@ void Equation::PrintEquationToFile(Matrix& A, Vector& b)
 		file.close();
 	}
 	else {
-		printf("Unable to wtrite to file");
+		printf("Unable to write to file");
 	}
 }
 

@@ -147,6 +147,7 @@
     <ClCompile Include="GaussJordan.cpp" />
     <ClCompile Include="GaussJordanTest.cpp" />
     <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="TestData.cpp" />
     <ClCompile Include="Vector.cpp" />
     <ClCompile Include="Czeb_Porr.cpp" />
   </ItemGroup>
@@ -155,6 +156,7 @@
     <ClInclude Include="GaussJordan.h" />
     <ClInclude Include="GaussJordanTest.h" />
     <ClInclude Include="Matrix.h" />
+    <ClInclude Include="TestData.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

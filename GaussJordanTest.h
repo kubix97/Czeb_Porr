@@ -48,6 +48,8 @@ public:
 	 */
 	void performTest(int matrix_size, int min_val, int max_val, std::string file_path, std::string result_file_path, int number_of_executions);
 
+	void performTestOnExistingEquation(int matrix_size, std::string result_file_path, int number_of_executions);
+
 	/*
 	 * Metoda przeprowadzajaca scenariusz testowy dla zdefiniowanej wewnatrz grupy testow
 	 *
@@ -55,6 +57,8 @@ public:
 	 *
 	 */
 	void performTestGroup(int test_repetition_number);
+
+	void performTestGroupOnExistingEquation(int test_repetition_number);
 };
 
 #endif // !GAUSSJORDANTEST_H

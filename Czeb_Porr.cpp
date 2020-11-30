@@ -10,6 +10,7 @@
 #include "GaussJordan.h"
 #include "GaussJordanTest.h"
 #include "Equation.h"
+#include "TestData.h"
 
 
 using namespace std;
@@ -117,77 +118,16 @@ void ReadEquationFromFile(Matrix& A, Vector &b)
 
 int main()
 {
+	TestData td = TestData();
 	GaussJordanTest test = GaussJordanTest();
-	test.performTestGroup(2);
+	test.performTestGroupOnExistingEquation(2);
+	
+	
 	/*test.performTest(15, -50, 50, "gaussjordantest.txt", result_file_path, 5);
 	test.performTest(40, -50, 50, "gaussjordantest.txt", result_file_path, 5);
 	test.performTest(100, -50, 50, "gaussjordantest.txt", result_file_path, 5);
 	test.performTest(300, -50, 50, "gaussjordantest.txt", result_file_path, 5);
 	test.performTest(500, -50, 50, "gaussjordantest.txt", result_file_path, 5);*/
-	//int rows = 50; 
-	//int cols = rows;
-
-	//// Init all necessary vectors and matrix A
-	//Matrix  A = Matrix(rows, cols);
-	//float   fMaxDiagVal = A.Generate(-50, 50);
-	//Vector  vXZero1 = Vector(rows);
-	//Vector  vXZero2 = Vector(rows);
-	//Vector  vXZero3 = Vector(rows);
-	//Vector  b = Vector(rows);
-	//b.Generate(-50, 50);
-
-	//string path = "testFile.txt";
-	//Equation eq = Equation();
-	////PrintEquationToFile(A, b);
-	//eq.PrintEquationToFile(A, b, path);
-
-	//Matrix A1 = Matrix(rows, cols);
-	//Vector b1 = Vector(rows);
-	//eq.ReadEquationFromFile(A1, b1, path);
-	///*A1.PrintMatrixToShell();
-	//cout << "Wektor b1: " << endl;
-	//b1.PrintVectorToShell();*/
-
-	//Matrix A2 = Matrix(rows, cols);
-	//Vector b2 = Vector(rows);
-	//eq.ReadEquationFromFile(A2, b2, path);
-	///*A2.PrintMatrixToShell();
-	//cout << "Wektor b2: " << endl;
-	//b2.PrintVectorToShell();*/
-
-	//Matrix A3 = Matrix(rows, cols);
-	//Vector b3 = Vector(rows);
-	//eq.ReadEquationFromFile(A3, b3, path);
-	///*A3.PrintMatrixToShell();
-	//cout << "Wektor b3: " << endl;
-	//b3.PrintVectorToShell();*/
-
-	//
-	////Matrix A1 = A;
-	////b.PrintVectorToShell();
-	////Vector b1(b);
-	////b1.PrintVectorToShell();
-
-	////Matrix A2 = A;
-	////Vector b2(b);
-	////b2.PrintVectorToShell();
-
-	//cout << "Execution time for " << rows << " rows" << "\n\n";
-
-	//cout << "Sekwencyjna:\t\t " << endl;
-	//GaussJordan::GaussJordanAlgotithm(A1, vXZero1, b1);
-	//cout << "Zrownoleglona:\t\t " << endl;
-	//GaussJordan::GaussJordanAlgorithmWithParalelization(A2, vXZero2, b2);
-	//cout << "Wektoryzacja:\t\t " << endl;
-	//GaussJordan::GaussJordanAlgorithmWithVectorization(A3, vXZero3, b3);
-
-	/*cout << "Sekwencyjna:\t\t " << endl;
-	Gauss::PrintResults(vXZero1);
-	cout << "Zrownoleglona:\t\t " << endl; 
-	Gauss::PrintResults(vXZero2);
-	cout << "Wektoryzacja:\t\t " << endl;
-	Gauss::PrintResults(vXZero3);
-	A3.PrintMatrixToShell();*/
 
 	return 0;
     
