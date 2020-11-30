@@ -156,4 +156,11 @@ void GaussJordanTest::performTestGroupOnExistingEquation(int test_repetition_num
 	test.performTestOnExistingEquation(50, this->result_file_path, test_repetition_number);
 	test.performTestOnExistingEquation(70, this->result_file_path, test_repetition_number);
 	test.performTestOnExistingEquation(100, this->result_file_path, test_repetition_number);
+	test.performTestOnExistingEquation(150, this->result_file_path, test_repetition_number);
+	test.performTestOnExistingEquation(200, this->result_file_path, test_repetition_number);
+	test.performTestOnExistingEquation(300, this->result_file_path, test_repetition_number);
+	test.performTestOnExistingEquation(400, this->result_file_path, test_repetition_number);
+	test.performTestOnExistingEquation(500, this->result_file_path, test_repetition_number);
+	test.performTestOnExistingEquation(600, this->result_file_path, test_repetition_number);
+	test.performTestOnExistingEquation(700, this->result_file_path, test_repetition_number);
 }

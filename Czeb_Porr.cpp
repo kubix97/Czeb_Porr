@@ -120,15 +120,7 @@ int main()
 {
 	TestData td = TestData();
 	GaussJordanTest test = GaussJordanTest();
-	test.performTestGroupOnExistingEquation(2);
-	
-	
-	/*test.performTest(15, -50, 50, "gaussjordantest.txt", result_file_path, 5);
-	test.performTest(40, -50, 50, "gaussjordantest.txt", result_file_path, 5);
-	test.performTest(100, -50, 50, "gaussjordantest.txt", result_file_path, 5);
-	test.performTest(300, -50, 50, "gaussjordantest.txt", result_file_path, 5);
-	test.performTest(500, -50, 50, "gaussjordantest.txt", result_file_path, 5);*/
+	test.performTestGroupOnExistingEquation(5);
 
-	return 0;
-    
+	return 0;    
 }
